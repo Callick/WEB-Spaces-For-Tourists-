@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Placesinfo;
+use App\Http\Controllers\forPlaceInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('tourismHome');
+
+    // Fetching places from the database based on categories 'Historical' and 'To-Do'
+    $historicalPlaces = Placesinfo::where('categoryName', 'Historical')
+    ->latest('created_at')
+    ->take(3)
+    ->get(['id', 'placeName', 'placeShortdes', 'image', 'placeLocation']);
+
+    $todoPlaces = Placesinfo::where('categoryName', 'To-Do')
+    ->latest('created_at')
+    ->take(3)
+    ->get(['id', 'placeName', 'placeShortdes', 'image', 'placeLocation']);
+
+    $restaurantPlaces = Placesinfo::where('categoryName', 'Restaurant')
+    ->latest('created_at')
+    ->take(3)
+    ->get(['id', 'placeName', 'placeShortdes', 'image', 'placeLocation']);
+
+    return view('tourismHome', compact('historicalPlaces', 'todoPlaces', 'restaurantPlaces'));
 });
+
+Route::get('/placeDetails/{id}', [forPlaceInfoController::class, 'show'])->name('place.details');

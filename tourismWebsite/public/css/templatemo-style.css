@@ -5,6 +5,19 @@ TemplateMo 556 Catalog-Z
 https://templatemo.com/tm-556-catalog-z
 
 */
+#placeLoc:hover {
+    border-color: #00bfff;
+}
+
+#card-zoom-effect:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+
+
+#card-zoom-effect {
+	transition: all 0.3s;
+}
 
 #loader-wrapper {
     position: fixed;

@@ -86,4 +86,10 @@ class PlacesInfoController extends AdminController
 
         return $form;
     }
+
+    public function show($id)
+    {
+        $placeinfos = PlacesInfo::findOrFail($id);
+        return view('placeInfo', compact('placeinfos'));
+    }
 }
