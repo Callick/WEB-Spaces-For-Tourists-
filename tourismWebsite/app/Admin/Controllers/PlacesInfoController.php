@@ -7,7 +7,7 @@ use OpenAdmin\Admin\Form;
 use OpenAdmin\Admin\Grid;
 use OpenAdmin\Admin\Show;
 use \App\Models\PlacesInfo;
-
+use OpenAdmin\Admin\Layout\Content;
 class PlacesInfoController extends AdminController
 {
     /**
@@ -87,7 +87,7 @@ class PlacesInfoController extends AdminController
         return $form;
     }
 
-    public function show($id)
+    public function show($id, Content $content)
     {
         $placeinfos = PlacesInfo::findOrFail($id);
         return view('placeInfo', compact('placeinfos'));

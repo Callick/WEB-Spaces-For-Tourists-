@@ -13,7 +13,7 @@
             @foreach($places as $item)
                 <div class="col-md-4 mb-4">
                     <a href="{{ route('place.details', $item->id) }}" class="text-decoration-none text-dark">
-                        <div class="card h-100 shadow-sm">
+                        <div class="card h-100 shadow-sm" id="card-zoom-effect">
                             <img src="{{ asset('uploads/' . $item->image) }}"
                                  class="card-img-top"
                                  alt="{{ $item->placeName }}"
