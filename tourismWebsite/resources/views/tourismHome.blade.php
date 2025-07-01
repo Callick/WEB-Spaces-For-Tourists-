@@ -11,9 +11,7 @@
                 Historical Places
             </h2>
             <div class="col-6 d-flex justify-content-end align-items-center">
-                <form action="" class="tm-text-primary">
-                    Page <input type="text" value="1" size="1" class="tm-input-paging tm-text-primary"> of 200
-                </form>
+                <a href="{{ route('places.byCategory', ['category' => 'Historical']) }}" class="text-primary float-end"><i class="fa-regular fa-square-caret-right fa-bounce"></i></a>
             </div>
         </div>
         <div class="row">
@@ -36,14 +34,13 @@
                     </div>
                 </div>
             @endforeach
+        </div>
         <div class="row mb-4">
             <h2 class="col-6 tm-text-primary">
                 To-Do Things
             </h2>
             <div class="col-6 d-flex justify-content-end align-items-center">
-                <form action="" class="tm-text-primary">
-                    Page <input type="text" value="1" size="1" class="tm-input-paging tm-text-primary"> of 200
-                </form>
+                <a href="{{ route('places.byCategory', ['category' => 'To-Do']) }}" class="text-primary float-end"><i class="fa-regular fa-square-caret-right fa-bounce"></i></a>
             </div>
         </div>
         <div class="row">
@@ -72,9 +69,7 @@
                 For Traditional Dishes
             </h2>
             <div class="col-6 d-flex justify-content-end align-items-center">
-                <form action="" class="tm-text-primary">
-                    Page <input type="text" value="1" size="1" class="tm-input-paging tm-text-primary"> of 200
-                </form>
+                <a href="{{ route('places.byCategory', ['category' => 'Restaurant']) }}" class="text-primary float-end"><i class="fa-regular fa-square-caret-right fa-bounce"></i></a>
             </div>
         </div>
         <div class="row">

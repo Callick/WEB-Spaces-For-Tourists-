@@ -35,5 +35,11 @@ Route::get('/', function () {
 
     return view('tourismHome', compact('historicalPlaces', 'todoPlaces', 'restaurantPlaces'));
 });
-
+// Route to show details of a specific place
 Route::get('/placeDetails/{id}', [forPlaceInfoController::class, 'show'])->name('place.details');
+
+// Route to show places following search query
+Route::get('/search', [forPlaceInfoController::class, 'search'])->name('place.search');
+
+// Route to view places by category
+Route::get('/places/category/{category}', [forPlaceInfoController::class, 'viewByCategory'])->name('places.byCategory');

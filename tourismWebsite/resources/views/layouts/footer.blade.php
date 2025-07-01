@@ -33,8 +33,8 @@
                     Copyright 2025 Tourismo Porto. All rights reserved.
                 </div>
                 <div class="col-lg-4 col-md-5 col-12 px-5 text-right">
-                    Customized by <a href="https://github.com/Callick/WEB-Spaces-For-Tourists-" class="tm-text-gray" rel="sponsored" target="_blank">Susmit Karmaker</a></br>
-                    Designed by <a href="https://templatemo.com" class="tm-text-gray" rel="sponsored" target="_blank">TemplateMo</a>
+                    Developed by <a href="https://github.com/Callick/WEB-Spaces-For-Tourists-" class="tm-text-gray" rel="sponsored" target="_blank">Susmit Karmaker</a></br>
+                    Adapted From <a href="https://templatemo.com" class="tm-text-gray" rel="sponsored" target="_blank">TemplateMo</a>
                 </div>
             </div>
         </div>

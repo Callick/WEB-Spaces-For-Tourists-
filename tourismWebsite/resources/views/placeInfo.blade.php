@@ -7,7 +7,7 @@
 
                     <div class="col-lg-8 col-12 mb-5">
                         <h2 class="tm-text-primary mb-5">{{ $placeinfos->placeName }} </h2>
-                        <p class="text-uppercase">{{ $placeinfos->placeShortdes }} <span class="badge bg-info text-dark">{{$placeinfos->categoryName}}</span></p>
+                        <p class="text-uppercase">{{ $placeinfos->placeShortdes }} <a href="{{ route('places.byCategory', ['category' => $placeinfos->categoryName]) }}"><span class="badge bg-info text-dark">{{$placeinfos->categoryName}}</span> </a> </p>
                         <img src="{{ asset('uploads/' . $placeinfos->image) }}" class="rounded mx-auto d-block" alt="{{ $placeinfos->placeName }}"
                             style="width: 100%; height: auto; max-height: 400px; object-fit: cover;"><br>
                         <p class="text-uppercase">{{ $placeinfos->placeDescription }}</p>
