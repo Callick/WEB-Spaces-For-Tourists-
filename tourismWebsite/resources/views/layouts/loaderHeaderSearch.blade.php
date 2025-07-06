@@ -18,16 +18,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link nav-link-1 active" aria-current="page" href="index.html">Photos</a>
+                    <a class="nav-link nav-link-1" aria-current="page" href="{{ route('places.byCategory', ['category' => 'To-Do']) }}">To-Do</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-2" href="videos.html">Videos</a>
+                    <a class="nav-link nav-link-2" href="{{ route('places.byCategory', ['category' => 'Historical']) }}">Historical</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-3" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link-4" href="contact.html">Contact</a>
+                    <a class="nav-link nav-link-3" href="{{ route('places.byCategory', ['category' => 'Restaurant']) }}">Restaurant</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-link-5" href="/admin/auth/login"><i class="fa-solid fa-user-tie"></i></a>
