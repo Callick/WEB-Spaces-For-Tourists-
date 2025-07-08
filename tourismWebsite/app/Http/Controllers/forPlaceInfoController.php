@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Placesinfo;
+use App\Models\PlacesInfo;
 
 class forPlaceInfoController extends Controller
 {
