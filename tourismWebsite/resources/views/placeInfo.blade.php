@@ -7,10 +7,30 @@
 
                     <div class="col-lg-8 col-12 mb-5">
                         <h2 class="tm-text-primary mb-5">{{ $placeinfos->placeName }} </h2>
+                        <p class="mt-auto text-end" id="placeLoc"><i class="fa-solid fa-map-location-dot"></i> {{ $placeinfos->placeLocation }}</p>
                         <p class="text-uppercase">{{ $placeinfos->placeShortdes }} <a href="{{ route('places.byCategory', ['category' => $placeinfos->categoryName]) }}"><span class="badge bg-info text-dark">{{$placeinfos->categoryName}}</span> </a> </p>
                         <img src="{{ asset('uploads/' . $placeinfos->image) }}" class="rounded mx-auto d-block" alt="{{ $placeinfos->placeName }}"
                             style="width: 100%; height: auto; max-height: 400px; object-fit: cover;"><br>
                         <p class="text-uppercase">{{ $placeinfos->placeDescription }}</p>
+                        @if($weather)
+                            <div class="card mt-4">
+                                <div class="card-body d-flex align-items-center">
+                                    <img src="http://openweathermap.org/img/wn/{{ $weather['icon'] }}@2x.png" alt="Weather Icon">
+                                    <div>
+                                        <h5>Current Weather in {{ $placeinfos->placeLocation }}</h5>
+                                        <p><strong>{{ ucfirst($weather['description']) }}</strong></p>
+                                        <p>🌡️ Temperature: {{ $weather['temperature'] }} °C</p>
+                                        <p>💨 Wind: {{ $weather['wind_speed'] }} km/s</p>
+                                        <p>💧 Humidity: {{ $weather['humidity'] }}%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @else
+                            <div class="alert alert-warning mt-4">
+                                Weather data is not available at the moment.
+                            </div>
+                        @endif
+
                     </div>
 
                     <div class="col-lg-4 col-12">
