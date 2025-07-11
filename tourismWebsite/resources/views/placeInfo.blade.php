@@ -12,13 +12,25 @@
                         <img src="{{ asset('uploads/' . $placeinfos->image) }}" class="rounded mx-auto d-block" alt="{{ $placeinfos->placeName }}"
                             style="width: 100%; height: auto; max-height: 400px; object-fit: cover;"><br>
                         <p class="text-uppercase">{{ $placeinfos->placeDescription }}</p>
+                    </div>
+
+                    <div class="col-lg-4 col-12 text-center">
+                        <h2 class="tm-text-primary mb-5">Get Direction</h2>
+                        <!-- Map -->
+                        <div class="mapouter mb-4">
+                            <div class="gmap-canvas">
+                                <iframe width="90%" height="480" id="gmap-canvas"
+                                    src="{{ $placeinfos->placeMapURL }}"
+                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            </div>
+                        </div>
                         @if($weather)
-                            <div class="card mt-4">
+                            <div class="card mt-4 shadow-sm">
+                                <h5 class="card-header text-center">Current Weather in {{ $placeinfos->placeLocation }}</h5>
                                 <div class="card-body d-flex align-items-center">
                                     <img src="http://openweathermap.org/img/wn/{{ $weather['icon'] }}@2x.png" alt="Weather Icon">
                                     <div>
-                                        <h5>Current Weather in {{ $placeinfos->placeLocation }}</h5>
-                                        <p><strong>{{ ucfirst($weather['description']) }}</strong></p>
+                                        <p><b>{{ ucfirst($weather['description']) }}</b></p>
                                         <p>🌡️ Temperature: {{ $weather['temperature'] }} °C</p>
                                         <p>💨 Wind: {{ $weather['wind_speed'] }} km/s</p>
                                         <p>💧 Humidity: {{ $weather['humidity'] }}%</p>
@@ -29,20 +41,7 @@
                             <div class="alert alert-warning mt-4">
                                 Weather data is not available at the moment.
                             </div>
-                        @endif
-
-                    </div>
-
-                    <div class="col-lg-4 col-12">
-                        <h2 class="tm-text-primary mb-5">Get Direction</h2>
-                        <!-- Map -->
-                        <div class="mapouter mb-4">
-                            <div class="gmap-canvas">
-                                <iframe width="90%" height="480" id="gmap-canvas"
-                                    src="{{ $placeinfos->placeMapURL }}"
-                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                            </div>
-                        </div>               
+                        @endif              
                     </div>
                 
             </div>
