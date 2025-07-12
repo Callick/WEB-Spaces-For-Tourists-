@@ -28,7 +28,7 @@ class WeatherService
         return [
             'temperature' => round($response['main']['temp']),// Round temperature to nearest integer
             //default wind speed unit m/s 'wind_speed'  => $response['wind']['speed'],
-            'wind_speed'  => round($response['wind']['speed'] * 3.6, 2), // Convert to km/h take upto 2 decimal places
+            'wind_speed'  => round($response['wind']['speed'] * 3.6, 1), // Convert to km/h take upto 2 decimal places
             'description' => $response['weather'][0]['description'],
             'icon'        => $response['weather'][0]['icon'], // For graphic
             'humidity'    => $response['main']['humidity'],
