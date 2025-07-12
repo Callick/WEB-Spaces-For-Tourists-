@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('title', 'Tourism Porto | Place Details')
-
 @section('content')
         <div class="container-fluid tm-mt-60">
             <div class="row tm-mb-50">
@@ -27,7 +26,7 @@
                         @if($weather)
                             <div class="card mt-4 shadow-sm">
                                 <h5 class="card-header text-center">Current Weather in {{ $placeinfos->placeLocation }}</h5>
-                                <div class="card-body d-flex align-items-center">
+                                <div class="card-body d-flex align-items-center weather-content">
                                     <img src="http://openweathermap.org/img/wn/{{ $weather['icon'] }}@2x.png" alt="Weather Icon">
                                     <div>
                                         <p><b>{{ ucfirst($weather['description']) }}</b></p>
