@@ -17,18 +17,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link nav-link-1" aria-current="page" href="{{ route('places.byCategory', ['category' => 'To-Do']) }}">To-Do</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link-2" href="{{ route('places.byCategory', ['category' => 'Historical']) }}">Historical</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link-3" href="{{ route('places.byCategory', ['category' => 'Restaurant']) }}">Restaurant</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link-5" href="/admin/auth/login"><i class="fa-solid fa-user-tie"></i></a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-1" aria-current="page" href="{{ route('places.byCategory', ['category' => 'To-Do']) }}">To-Do</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-2" href="{{ route('places.byCategory', ['category' => 'Historical']) }}">Historical</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-3" href="{{ route('places.byCategory', ['category' => 'Restaurant']) }}">Restaurant</a>
+                    </li>
+                @if (auth()->guard('admin')->check())
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-5" href="{{ url('/admin') }}"><i class="fa-solid fa-database"></i></a>
+                    </li>
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-5" href="{{ url('/admin-access') }}"><i class="fa-solid fa-user-secret"></i></a>
+                    </li>
+                @endif
             </ul>
             </div>
         </div>
