@@ -23,7 +23,7 @@
                                     frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                             </div>
                         </div>
-                        @if($weather)
+                        @if(isset($weather) && $weather)
                             <div class="card mt-4 shadow-sm">
                                 <h5 class="card-header text-center">Current Weather in {{ $placeinfos->placeLocation }}</h5>
                                 <div class="card-body d-flex align-items-center weather-content">
@@ -31,7 +31,7 @@
                                     <div>
                                         <p><b>{{ ucfirst($weather['description']) }}</b></p>
                                         <p>🌡️ Temperature: {{ $weather['temperature'] }} °C</p>
-                                        <p>💨 Wind: {{ $weather['wind_speed'] }} km/s</p>
+                                        <p>💨 Wind: {{ $weather['wind_speed'] }} km/h</p>
                                         <p>💧 Humidity: {{ $weather['humidity'] }}%</p>
                                     </div>
                                 </div>
@@ -51,25 +51,27 @@
                     </h2>
                 </div>
         <div class="row">
-            @foreach($recommended as $rec)
-                <div class="col-sm-4 mb-4 d-flex align-items-stretch">
-                    <div class="card w-100 h-100 shadow-sm" id="card-zoom-effect">
-                        <a href="{{ route('place.details', $rec->id) }}" style="text-decoration: none; color: inherit; width: 100%;">
-                            <img src="{{ asset('uploads/' . $rec->image) }}"
-                                class="card-img-top object-fit-cover"
-                                alt="{{ $rec->placeName }}"
-                                style="height: 200px; object-fit: cover;">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">{{ $rec->placeName }}</h5>
-                                <p class="card-text text-truncate" style="max-height: 4.8em; overflow: hidden;">
-                                    {{ $rec->placeShortdes }}
-                                </p>
-                                <p class="mt-auto" id="placeLoc"><i class="fa-solid fa-map-location-dot"></i> {{ $rec->placeLocation }}</p>
-                            </div>
-                        </a>
+            @if(isset($recommended) && count($recommended) > 0)
+                @foreach($recommended as $rec)
+                    <div class="col-sm-4 mb-4 d-flex align-items-stretch">
+                        <div class="card w-100 h-100 shadow-sm" id="card-zoom-effect">
+                            <a href="{{ route('place.details', $rec->id) }}" style="text-decoration: none; color: inherit; width: 100%;">
+                                <img src="{{ asset('uploads/' . $rec->image) }}"
+                                    class="card-img-top object-fit-cover"
+                                    alt="{{ $rec->placeName }}"
+                                    style="height: 200px; object-fit: cover;">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">{{ $rec->placeName }}</h5>
+                                    <p class="card-text text-truncate" style="max-height: 4.8em; overflow: hidden;">
+                                        {{ $rec->placeShortdes }}
+                                    </p>
+                                    <p class="mt-auto" id="placeLoc"><i class="fa-solid fa-map-location-dot"></i> {{ $rec->placeLocation }}</p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            @endif
         </div>
         </div> <!-- container-fluid, tm-container-content -->
 @endsection
