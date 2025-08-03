@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Placesinfo;
 use App\Http\Controllers\forPlaceInfoController;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,3 +43,23 @@ Route::get('/search', [forPlaceInfoController::class, 'search'])->name('place.se
 
 // Route to view places by category
 Route::get('/places/category/{category}', [forPlaceInfoController::class, 'viewByCategory'])->name('places.byCategory');
+
+Route::get('/user-dashboard', function () {
+    return view('profile');
+})->middleware('auth');
+
+// route for admin access
+Route::get('/admin-access', function () {
+    // If user is NOT logged in, redirect directly to OpenAdmin login
+    if (!Auth::check()) {
+        return redirect('/admin/auth/login');
+    }
+
+    // If user is admin (based on email)
+    if (Auth::user()->email === env('ADMIN_EMAIL')) {
+        return redirect('/admin');
+    }
+
+    // For normal users
+    return redirect('/user-dashboard'); // Or any route you defined
+});
