@@ -12,6 +12,13 @@ class Authenticate extends Middleware
      */
     protected function redirectTo(Request $request): ?string
     {
-        return $request->expectsJson() ? null : route('login');
+        //return $request->expectsJson() ? null : route('login');
+            // Check if the request expects JSON
+        if ($request->expectsJson()) {
+            return null;
+        }
+
+        // Redirect to OpenAdmin login
+        return '/admin/auth/login';
     }
 }
