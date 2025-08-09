@@ -38,4 +38,16 @@ The application provides historic sites, restaurants, and “things to do” aro
       - Git (Version control)
       - XAMPP (For Server & DB)
 
-# 
+# Prerequisite
+  - PHP 8.1+ OR HIGHER
+  - Composer
+  - MySQL 5.7/8.0
+  - Git
+  - An OpenWeather API key
+
+# Installation
+  Follow the steps below to set up the project on your local machine:
+    1. Clone the repository
+    2. Install PHP dependencies
+    3. Install JS assets
+    4. 
