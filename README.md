@@ -46,8 +46,35 @@ The application provides historic sites, restaurants, and “things to do” aro
   - An OpenWeather API key
 
 # Installation
-  Follow the steps below to set up the project on your local machine:
-    1. Clone the repository
-    2. Install PHP dependencies
-    3. Install JS assets
-    4. 
+  Follow the steps below to set up the project on your local machine: <br>
+    ** 1. Clone the repository **
+      ``` 
+      git clone https://github.com/Callick/WEB-Spaces-For-Tourists-.git
+      cd WEB-Spaces-For-Tourists-/tourismWebsite
+      ```
+    ** 2. Install PHP dependencies **
+      ```
+      composer install
+      ```
+    ** 3. Install JS assets **
+    ```
+    npm install
+    ```
+    ** 4. Environment configuration **
+    ```
+    cp .env.example .env
+    php artisan key:generate
+    ```
+    Open .env and set as instructed below:
+    ```
+    DB_DATABASE=your_db
+    DB_USERNAME=your_user
+    DB_PASSWORD=your_pass
+    OPENWEATHER_API_KEY=xxxxxxxx
+    ADMIN_EMAIL=your_admin@example.com
+    ```
+    ** 5. Database setup & migration **
+    ```
+    php artisan migrate
+    ```
+    
