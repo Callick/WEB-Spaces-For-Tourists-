@@ -47,7 +47,7 @@ The application provides historic sites, restaurants, and “things to do” aro
 
 # Installation
   Follow the steps below to set up the project on your local machine: <br>
-    ** 1. Clone the repository **
+  ** 1. Clone the repository **
       ``` 
       git clone https://github.com/Callick/WEB-Spaces-For-Tourists-.git
       cd WEB-Spaces-For-Tourists-/tourismWebsite
