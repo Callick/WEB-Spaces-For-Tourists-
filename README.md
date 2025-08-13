@@ -71,7 +71,7 @@ The application provides historic sites, restaurants, and “things to do” aro
   DB_USERNAME=write_your_username
   DB_PASSWORD=write_your_password
   OPENWEATHER_API_KEY=xxxxxxxx
-  ADMIN_EMAIL=your_admin@example.com
+  ADMIN_EMAIL=your_admin@xyz.com
 ```
 **5. Database setup & migration**
 ```
