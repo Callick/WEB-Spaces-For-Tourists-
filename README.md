@@ -47,34 +47,39 @@ The application provides historic sites, restaurants, and “things to do” aro
 
 # Installation
   Follow the steps below to set up the project on your local machine: <br>
-  ** 1. Clone the repository **
-      ``` 
-      git clone https://github.com/Callick/WEB-Spaces-For-Tourists-.git
-      cd WEB-Spaces-For-Tourists-/tourismWebsite
-      ```
-    ** 2. Install PHP dependencies **
-      ```
-      composer install
-      ```
-    ** 3. Install JS assets **
-    ```
-    npm install
-    ```
-    ** 4. Environment configuration **
-    ```
-    cp .env.example .env
-    php artisan key:generate
-    ```
-    Open .env and set as instructed below:
-    ```
-    DB_DATABASE=your_db
-    DB_USERNAME=your_user
-    DB_PASSWORD=your_pass
-    OPENWEATHER_API_KEY=xxxxxxxx
-    ADMIN_EMAIL=your_admin@example.com
-    ```
-    ** 5. Database setup & migration **
-    ```
-    php artisan migrate
-    ```
-    
+**1. Clone the repository**
+```
+  git clone https://github.com/Callick/WEB-Spaces-For-Tourists-.git
+  cd WEB-Spaces-For-Tourists-/tourismWebsite
+```
+**2. Install PHP dependencies**
+```
+  composer install
+```
+**3. Install JS assets**
+```
+  npm install
+```
+**4. Environment configuration**<br>
+```
+  cp .env.example .env
+  php artisan key:generate
+```
+  Open .env and set as instructed below:<br>
+```
+  DB_DATABASE=write_your_DB_name
+  DB_USERNAME=write_your_username
+  DB_PASSWORD=write_your_password
+  OPENWEATHER_API_KEY=xxxxxxxx
+  ADMIN_EMAIL=your_admin@example.com
+```
+**5. Database setup & migration**
+```
+  php artisan migrate
+```
+**6. Run the Project**
+```
+  php artisan serve
+```
+
+# Should Look Like Below:
