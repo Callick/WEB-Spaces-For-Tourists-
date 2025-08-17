@@ -18,22 +18,26 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
 
     // Fetching places from the database based on categories 'Historical' and 'To-Do'
+    $marqueePlaces = Placesinfo::latest('created_at')
+        ->take(5)
+        ->get(['id', 'placeName', 'image', 'placeLocation']);
+
     $historicalPlaces = Placesinfo::where('categoryName', 'Historical')
-    ->latest('created_at')
-    ->take(3)
-    ->get(['id', 'placeName', 'placeShortdes', 'image', 'placeLocation']);
+        ->latest('created_at')
+        ->take(3)
+        ->get(['id', 'placeName', 'placeShortdes', 'image', 'placeLocation']);
 
     $todoPlaces = Placesinfo::where('categoryName', 'To-Do')
-    ->latest('created_at')
-    ->take(3)
-    ->get(['id', 'placeName', 'placeShortdes', 'image', 'placeLocation']);
+        ->latest('created_at')
+        ->take(3)
+        ->get(['id', 'placeName', 'placeShortdes', 'image', 'placeLocation']);
 
     $restaurantPlaces = Placesinfo::where('categoryName', 'Restaurant')
-    ->latest('created_at')
-    ->take(3)
-    ->get(['id', 'placeName', 'placeShortdes', 'image', 'placeLocation']);
+        ->latest('created_at')
+        ->take(3)
+        ->get(['id', 'placeName', 'placeShortdes', 'image', 'placeLocation']);
 
-    return view('tourismHome', compact('historicalPlaces', 'todoPlaces', 'restaurantPlaces'));
+    return view('tourismHome', compact('marqueePlaces', 'historicalPlaces', 'todoPlaces', 'restaurantPlaces'));
 });
 // Route to show details of a specific place
 Route::get('/placeDetails/{id}', [forPlaceInfoController::class, 'show'])->name('place.details');
