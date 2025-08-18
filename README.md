@@ -82,4 +82,9 @@ The application provides historic sites, restaurants, and “things to do” aro
   php artisan serve
 ```
 
-# Should Look Like Below 📹:
+# Click Below To Explore Project Overview📹:
+<div align="center">
+  <a href="https://youtu.be/d3UEFXbYzdg">
+    <img src="https://img.youtube.com/vi/d3UEFXbYzdg/maxresdefault.jpg" alt="A video demonstration of the project">
+  </a>
+</div>
