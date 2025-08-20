@@ -84,7 +84,7 @@ The application provides historic sites, restaurants, and “things to do” aro
 
 # Click Below To Explore Project Overview📹:
 <div align="center">
-  <a href="https://youtu.be/d3UEFXbYzdg" target="_blank">
-    <img src="https://img.youtube.com/vi/d3UEFXbYzdg/maxresdefault.jpg" alt="A video demonstration of the project">
+  <a href="https://youtu.be/0P6-VtlXDhg" target="blank">
+    <img src="https://img.youtube.com/vi/0P6-VtlXDhg/maxresdefault.jpg" alt="A video demonstration of the project">
   </a>
 </div>
